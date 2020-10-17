@@ -1,4 +1,4 @@
-import { App } from "../src/components/App";
+import { App } from "../../src/components/App";
 import configureStore from "redux-mock-store";
 import renderer from "react-test-renderer";
 

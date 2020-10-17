@@ -6,6 +6,7 @@ import thunk from "redux-thunk";
 import rootReducer from "./reducers";
 import "./index.css";
 import App from "./components/App";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const logger = ({ dispatch, getState }) => (next) => (action) => {
   console.log("ACTION", action);

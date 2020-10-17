@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ShowList from "./ShowList";
 import { toggleList } from "../actions";
+import { Container, Row, Col } from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -17,51 +18,56 @@ class App extends Component {
     const { listNames } = this.props;
     const { portugal_List, nicaragua_List, marshall_Island_List } = listNames;
     return (
-      <div>
-        <div id="selectfromcomponent">
-          <h4>Portugal</h4>
-          <ul>
-            {portugal_List.map((nameobj, ind) => (
-              <li key={ind}>
-                <input
-                  type="checkbox"
-                  checked={nameobj.checked}
-                  onChange={() => this.handlechecked(nameobj)}
-                />
-                {nameobj.name}
-              </li>
-            ))}
-          </ul>
-          <h4>Nicaragua</h4>
-          <ul>
-            {nicaragua_List.map((nameobj, ind) => (
-              <li key={ind}>
-                <input
-                  type="checkbox"
-                  checked={nameobj.checked}
-                  onChange={() => this.handlechecked(nameobj)}
-                />
-                {nameobj.name}
-              </li>
-            ))}
-          </ul>
-          <h4>Marshall Islands</h4>
-          <ul>
-            {marshall_Island_List.map((nameobj, ind) => (
-              <li key={ind}>
-                <input
-                  type="checkbox"
-                  checked={nameobj.checked}
-                  onChange={() => this.handlechecked(nameobj)}
-                />
-                {nameobj.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <ShowList dispatch={this.props.dispatch} />
-      </div>
+      <Container>
+        <Row>
+          <Col>
+            <div id="selectfromcomponent">
+              <h4>Portugal</h4>
+              <ul>
+                {portugal_List.map((nameobj, ind) => (
+                  <li key={ind}>
+                    <input
+                      type="checkbox"
+                      checked={nameobj.checked}
+                      onChange={() => this.handlechecked(nameobj)}
+                    />
+                    {nameobj.name}
+                  </li>
+                ))}
+              </ul>
+              <h4>Nicaragua</h4>
+              <ul>
+                {nicaragua_List.map((nameobj, ind) => (
+                  <li key={ind}>
+                    <input
+                      type="checkbox"
+                      checked={nameobj.checked}
+                      onChange={() => this.handlechecked(nameobj)}
+                    />
+                    {nameobj.name}
+                  </li>
+                ))}
+              </ul>
+              <h4>Marshall Islands</h4>
+              <ul>
+                {marshall_Island_List.map((nameobj, ind) => (
+                  <li key={ind}>
+                    <input
+                      type="checkbox"
+                      checked={nameobj.checked}
+                      onChange={() => this.handlechecked(nameobj)}
+                    />
+                    {nameobj.name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Col>
+          <Col>
+            <ShowList dispatch={this.props.dispatch} />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

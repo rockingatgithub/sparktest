@@ -51,7 +51,7 @@ class App extends Component {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className="my-col">
             <div id="selectfromcomponent">
               <h4>Portugal</h4>
               <ul>
@@ -94,7 +94,7 @@ class App extends Component {
               </ul>
             </div>
           </Col>
-          <Col>
+          <Col className="my-col">
             <ShowList dispatch={this.props.dispatch} />
           </Col>
         </Row>

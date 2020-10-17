@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { ListGroup, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { toggleList } from "../actions";
 
@@ -21,32 +22,32 @@ class ShowList extends Component {
     return (
       <div>
         {portugal_Show_List.length !== 0 ? <h4>Portugal</h4> : null}
-        <ul>
+        <ListGroup>
           {portugal_Show_List.map((obj, ind) => (
-            <li key={ind}>
+            <ListGroup.Item key={ind}>
               {obj.name}
-              <button onClick={() => this.toggleList(obj)}>X</button>
-            </li>
+              <Button onClick={() => this.toggleList(obj)}>X</Button>
+            </ListGroup.Item>
           ))}
-        </ul>
+        </ListGroup>
         {nicaragua_Show_List.length !== 0 ? <h4>Nicaragua</h4> : null}
-        <ul>
+        <ListGroup>
           {nicaragua_Show_List.map((obj, ind) => (
-            <li key={ind}>
+            <ListGroup.Item key={ind}>
               {obj.name}
-              <button onClick={() => this.toggleList(obj)}>X</button>
-            </li>
+              <Button onClick={() => this.toggleList(obj)}>X</Button>
+            </ListGroup.Item>
           ))}
-        </ul>
+        </ListGroup>
         {marshall_Show_List.length !== 0 ? <h4>Marshall Islands</h4> : null}
-        <ul>
+        <ListGroup>
           {marshall_Show_List.map((obj, ind) => (
-            <li key={ind}>
+            <ListGroup.Item key={ind}>
               {obj.name}
-              <button onClick={() => this.toggleList(obj)}>X</button>
-            </li>
+              <Button onClick={() => this.toggleList(obj)}>X</Button>
+            </ListGroup.Item>
           ))}
-        </ul>
+        </ListGroup>
       </div>
     );
   }

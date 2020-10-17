@@ -2,7 +2,16 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ShowList from "./ShowList";
 import { toggleList } from "../actions";
-import { Container, Row, Col } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Nav,
+  Navbar,
+  Button,
+  Form,
+  FormControl,
+} from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +27,29 @@ class App extends Component {
     const { listNames } = this.props;
     const { portugal_List, nicaragua_List, marshall_Island_List } = listNames;
     return (
-      <Container>
+      <Container fluid>
+        <Row noGutters>
+          <Col>
+            <Navbar bg="light" expand="lg">
+              <Navbar.Brand href="#home">LOGO</Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <Nav.Link href="#home">Home</Nav.Link>
+                  <Nav.Link href="#link">Link</Nav.Link>
+                </Nav>
+                <Form inline>
+                  <FormControl
+                    type="text"
+                    placeholder="Search"
+                    className="mr-sm-2"
+                  />
+                  <Button variant="outline-success">Search</Button>
+                </Form>
+              </Navbar.Collapse>
+            </Navbar>
+          </Col>
+        </Row>
         <Row>
           <Col>
             <div id="selectfromcomponent">

@@ -17,7 +17,7 @@ let nicaraguaArray = [
 
 let marshallArray = [
   { country: "Marshall Islands", name: "Aaron Almaraz", checked: false },
-  { country: "Portugal", name: "Jelena Desinova", checked: false },
+  { country: "Marshall Islands", name: "Jelena Desinova", checked: false },
 ];
 
 const initialListState = {
@@ -41,8 +41,15 @@ export function listNames(state = initialListState, action) {
           }
         }
         if (flag === 0) {
-            
-          state.portugal_Show_List.push(action.nameobj);
+          let ind = -1;
+          for (let i = 0; i < state.portugal_List.length; i++) {
+            if (state.portugal_List[i].name === action.nameobj.name) {
+              ind = i;
+              break;
+            }
+          }
+          state.portugal_List[ind].checked = true;
+          state.portugal_Show_List.push(state.portugal_List[ind]);
         } else {
           state.portugal_Show_List.filter(
             (nameobj) => nameobj.name !== action.nameobj.name
@@ -65,7 +72,15 @@ export function listNames(state = initialListState, action) {
           }
         }
         if (flag === 0) {
-          state.nicaragua_Show_List.push(action.nameobj);
+          let ind = -1;
+          for (let i = 0; i < state.nicaragua_List.length; i++) {
+            if (state.nicaragua_List[i].name === action.nameobj.name) {
+              ind = i;
+              break;
+            }
+          }
+          state.nicaragua_List[ind].checked = true;
+          state.nicaragua_Show_List.push(state.nicaragua_List[ind]);
         } else {
           state.nicaragua_Show_List.filter(
             (nameobj) => nameobj.name !== action.nameobj.name
@@ -88,7 +103,15 @@ export function listNames(state = initialListState, action) {
           }
         }
         if (flag === 0) {
-          state.marshall_Show_List.push(action.nameobj);
+          let ind = -1;
+          for (let i = 0; i < state.marshall_Island_List.length; i++) {
+            if (state.marshall_Island_List[i].name === action.nameobj.name) {
+              ind = i;
+              break;
+            }
+          }
+          state.marshall_Island_List[ind].checked = true;
+          state.marshall_Show_List.push(state.marshall_Island_List[ind]);
         } else {
           state.marshall_Show_List.filter(
             (nameobj) => nameobj.name !== action.nameobj.name

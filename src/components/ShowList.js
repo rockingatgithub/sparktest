@@ -18,7 +18,7 @@ class ShowList extends Component {
         {list1.length !== 0 ? <h4>Portugal</h4> : null}
         <ul>
           {list1.map((obj, ind) => (
-            <li>
+            <li key={ind}>
               {obj.name}
               <button onClick={() => this.toggleList(obj)}>X</button>
             </li>
@@ -27,7 +27,7 @@ class ShowList extends Component {
         {list2.length !== 0 ? <h4>Nicaragua</h4> : null}
         <ul>
           {list2.map((obj, ind) => (
-            <li>
+            <li key={ind}>
               {obj.name}
               <button onClick={() => this.toggleList(obj)}>X</button>
             </li>
@@ -36,7 +36,7 @@ class ShowList extends Component {
         {list3.length !== 0 ? <h4>Marshall Islands</h4> : null}
         <ul>
           {list3.map((obj, ind) => (
-            <li>
+            <li key={ind}>
               {obj.name}
               <button onClick={() => this.toggleList(obj)}>X</button>
             </li>

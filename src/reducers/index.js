@@ -34,8 +34,9 @@ export function listNames(state = initialListState, action) {
     case TOGGLE_LIST:
       if (action.nameobj.country === "Portugal") {
         let flag = 0;
-        for (let name in state.portugal_Show_List) {
-          if (name === action.nameobj.name) {
+
+        for (let name of state.portugal_Show_List) {
+          if (name.name === action.nameobj.name) {
             flag = 1;
             break;
           }
@@ -51,9 +52,17 @@ export function listNames(state = initialListState, action) {
           state.portugal_List[ind].checked = true;
           state.portugal_Show_List.push(state.portugal_List[ind]);
         } else {
-          state.portugal_Show_List.filter(
-            (nameobj) => nameobj.name !== action.nameobj.name
-          );
+          let ind2 = -1;
+          //   console.log("I am done", state.portugal_Show_List.length);
+
+          for (let i = 0; i < state.portugal_Show_List.length; i++) {
+            if (state.portugal_Show_List[i].name === action.nameobj.name) {
+              ind2 = i;
+              break;
+            }
+          }
+          state.portugal_Show_List.splice(ind2, 1);
+          //   console.log("I am done", state.portugal_Show_List.length);
           let ind = -1;
           for (let i = 0; i < state.portugal_List.length; i++) {
             if (state.portugal_List[i].name === action.nameobj.name) {
@@ -65,8 +74,8 @@ export function listNames(state = initialListState, action) {
         }
       } else if (action.nameobj.country === "Nicaragua") {
         let flag = 0;
-        for (let name in state.nicaragua_Show_List) {
-          if (name === action.nameobj.name) {
+        for (let name of state.nicaragua_Show_List) {
+          if (name.name === action.nameobj.name) {
             flag = 1;
             break;
           }
@@ -82,9 +91,17 @@ export function listNames(state = initialListState, action) {
           state.nicaragua_List[ind].checked = true;
           state.nicaragua_Show_List.push(state.nicaragua_List[ind]);
         } else {
-          state.nicaragua_Show_List.filter(
-            (nameobj) => nameobj.name !== action.nameobj.name
-          );
+          let ind2 = -1;
+          //   console.log("I am done", state.portugal_Show_List.length);
+
+          for (let i = 0; i < state.nicaragua_Show_List.length; i++) {
+            if (state.nicaragua_Show_List[i].name === action.nameobj.name) {
+              ind2 = i;
+              break;
+            }
+          }
+          state.nicaragua_Show_List.splice(ind2, 1);
+          //   console.log("I am done", state.portugal_Show_List.length);
           let ind = -1;
           for (let i = 0; i < state.nicaragua_List.length; i++) {
             if (state.nicaragua_List[i].name === action.nameobj.name) {
@@ -96,8 +113,8 @@ export function listNames(state = initialListState, action) {
         }
       } else {
         let flag = 0;
-        for (let name in state.marshall_Show_List) {
-          if (name === action.nameobj.name) {
+        for (let name of state.marshall_Show_List) {
+          if (name.name === action.nameobj.name) {
             flag = 1;
             break;
           }
@@ -113,9 +130,17 @@ export function listNames(state = initialListState, action) {
           state.marshall_Island_List[ind].checked = true;
           state.marshall_Show_List.push(state.marshall_Island_List[ind]);
         } else {
-          state.marshall_Show_List.filter(
-            (nameobj) => nameobj.name !== action.nameobj.name
-          );
+          let ind2 = -1;
+          //   console.log("I am done", state.portugal_Show_List.length);
+
+          for (let i = 0; i < state.marshall_Show_List.length; i++) {
+            if (state.marshall_Show_List[i].name === action.nameobj.name) {
+              ind2 = i;
+              break;
+            }
+          }
+          state.marshall_Show_List.splice(ind2, 1);
+          //   console.log("I am done", state.portugal_Show_List.length);
           let ind = -1;
           for (let i = 0; i < state.marshall_Island_List.length; i++) {
             if (state.marshall_Island_List[i].name === action.nameobj.name) {

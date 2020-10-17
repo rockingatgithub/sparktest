@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { toggleList } from "../actions";
 
 class ShowList extends Component {
@@ -12,30 +13,34 @@ class ShowList extends Component {
   };
 
   render() {
-    const { list1, list2, list3 } = this.props;
+    const {
+      portugal_Show_List,
+      nicaragua_Show_List,
+      marshall_Show_List,
+    } = this.props.listNames;
     return (
       <div>
-        {list1.length !== 0 ? <h4>Portugal</h4> : null}
+        {portugal_Show_List.length !== 0 ? <h4>Portugal</h4> : null}
         <ul>
-          {list1.map((obj, ind) => (
+          {portugal_Show_List.map((obj, ind) => (
             <li key={ind}>
               {obj.name}
               <button onClick={() => this.toggleList(obj)}>X</button>
             </li>
           ))}
         </ul>
-        {list2.length !== 0 ? <h4>Nicaragua</h4> : null}
+        {nicaragua_Show_List.length !== 0 ? <h4>Nicaragua</h4> : null}
         <ul>
-          {list2.map((obj, ind) => (
+          {nicaragua_Show_List.map((obj, ind) => (
             <li key={ind}>
               {obj.name}
               <button onClick={() => this.toggleList(obj)}>X</button>
             </li>
           ))}
         </ul>
-        {list3.length !== 0 ? <h4>Marshall Islands</h4> : null}
+        {marshall_Show_List.length !== 0 ? <h4>Marshall Islands</h4> : null}
         <ul>
-          {list3.map((obj, ind) => (
+          {marshall_Show_List.map((obj, ind) => (
             <li key={ind}>
               {obj.name}
               <button onClick={() => this.toggleList(obj)}>X</button>
@@ -47,4 +52,10 @@ class ShowList extends Component {
   }
 }
 
-export default ShowList;
+function mapStateToProps({ listNames }) {
+  return {
+    listNames,
+  };
+}
+
+export default connect(mapStateToProps)(ShowList);

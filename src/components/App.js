@@ -15,14 +15,7 @@ class App extends Component {
 
   render() {
     const { listNames } = this.props;
-    const {
-      portugal_List,
-      nicaragua_List,
-      marshall_Island_List,
-      marshall_Show_List,
-      portugal_Show_List,
-      nicaragua_Show_List,
-    } = listNames;
+    const { portugal_List, nicaragua_List, marshall_Island_List } = listNames;
     return (
       <div>
         <div id="selectfromcomponent">
@@ -67,12 +60,7 @@ class App extends Component {
           </ul>
         </div>
 
-        <ShowList
-          dispatch={this.props.dispatch}
-          list1={portugal_Show_List}
-          list2={nicaragua_Show_List}
-          list3={marshall_Show_List}
-        />
+        <ShowList dispatch={this.props.dispatch} />
       </div>
     );
   }
